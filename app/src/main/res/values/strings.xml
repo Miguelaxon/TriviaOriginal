@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">My Application 28122020</string>
+    <string name="app_name">Trivia</string>
     <string name="titleFragment">
         Bienvenido.\n
         Ingresa tu nombre para comenzar.</string>
@@ -19,4 +19,5 @@
     <string name="todo">imagenCampeon</string>
     <string name="mensajeWinner">Bien hecho %1$s !!! \n <b>Eres un campeón!</b></string>
     <string name="btnSalir">Salir</string>
+    <string name="escriba_nombre">Escriba nombre</string>
 </resources>

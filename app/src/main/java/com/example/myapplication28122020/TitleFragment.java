@@ -7,6 +7,8 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.navigation.NavAction;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,6 +19,8 @@ import com.example.myapplication28122020.databinding.FragmentTitleBinding;
 
 public class TitleFragment extends Fragment {
     private FragmentTitleBinding binding;
+    private String name;
+    private Bundle bundle = new Bundle();
 
     public TitleFragment() {
         // Required empty public constructor
@@ -25,8 +29,6 @@ public class TitleFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-        }
     }
 
     @Override
@@ -39,11 +41,14 @@ public class TitleFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        binding.button.setOnClickListener(new View.OnClickListener() {
+        name = binding.etName.getText().toString();
+        bundle.putString("param1", name);
+        binding.btnEnviar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if(!binding.etName.getText().toString().isEmpty()) {
-
+                    Navigation.findNavController(v)
+                            .navigate(R.id.action_titleFragment_to_logoTriviaFragment, bundle);
                 } else {
                     Toast.makeText(getContext(), "Debes escribir un nombre",
                             Toast.LENGTH_LONG).show();
@@ -52,4 +57,9 @@ public class TitleFragment extends Fragment {
         });
     }
 
+    @Override
+    public void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+
+    }
 }

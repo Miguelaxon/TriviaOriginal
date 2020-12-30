@@ -7,6 +7,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -21,6 +22,7 @@ public class LogoTriviaFragment extends Fragment {
     private FragmentLogoTriviaBinding binding;
     private String name;
     private int choice;
+    private Bundle bundle = new Bundle();
 
     public LogoTriviaFragment() {
         // Required empty public constructor
@@ -75,10 +77,13 @@ public class LogoTriviaFragment extends Fragment {
         binding.btnEnviarResultado.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                bundle.putString("param1", name);
                 if ( choice == 1){
-
+                    Navigation.findNavController(v)
+                            .navigate(R.id.action_logoTriviaFragment_to_winnerFragment, bundle);
                 } else {
-
+                    Navigation.findNavController(v)
+                            .navigate(R.id.action_logoTriviaFragment_to_loserFragment, bundle);
                 }
             }
         });

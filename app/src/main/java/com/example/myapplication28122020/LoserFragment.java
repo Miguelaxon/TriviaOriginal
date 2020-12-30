@@ -7,6 +7,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,7 +18,7 @@ import com.example.myapplication28122020.databinding.FragmentLoserBinding;
 public class LoserFragment extends Fragment {
     private FragmentLoserBinding binding;
     private static final String ARG_PARAM1 = "param1";
-
+    private Bundle bundle = new Bundle();
     private String name;
 
     public LoserFragment() {
@@ -44,11 +45,12 @@ public class LoserFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         String mensaje = getString(R.string.mensajeLoser, name);
         binding.tvMensajeLoser.setText(mensaje);
-
         binding.btnRegreso.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                bundle.putString("param1", name);
+                Navigation.findNavController(v)
+                        .navigate(R.id.action_loserFragment_to_logoTriviaFragment, bundle);
             }
         });
     }

@@ -8,6 +8,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,7 +20,6 @@ public class WinnerFragment extends Fragment {
 
     private static final String ARG_PARAM1 = "param1";
     private FragmentWinnerBinding binding;
-
     private String name;
 
     public WinnerFragment() {
@@ -49,7 +49,8 @@ public class WinnerFragment extends Fragment {
         binding.btnVolver.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Navigation.findNavController(v)
+                        .navigate(R.id.action_winnerFragment_to_titleFragment);
             }
         });
 
