@@ -20,7 +20,7 @@ import com.example.myapplication28122020.databinding.FragmentTitleBinding;
 public class TitleFragment extends Fragment {
     private FragmentTitleBinding binding;
     private String name;
-    private Bundle bundle = new Bundle();
+    private Bundle bundle;
 
     public TitleFragment() {
         // Required empty public constructor
@@ -41,12 +41,16 @@ public class TitleFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        name = binding.etName.getText().toString();
-        bundle.putString("param1", name);
+        //binding.etName.setSelection(0);
+        bundle = new Bundle();
+
+
         binding.btnEnviar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(name.isEmpty()){
+                name = binding.etName.getText().toString();
+                bundle.putString("param1", name);
+                if(name.length()==0){
                     Toast.makeText(getContext(), "Campo vacío, ingrese un nombre"
                             , Toast.LENGTH_LONG).show();
                 } else {
@@ -55,11 +59,5 @@ public class TitleFragment extends Fragment {
                 }
             }
         });
-    }
-
-    @Override
-    public void onSaveInstanceState(@NonNull Bundle outState) {
-        super.onSaveInstanceState(outState);
-
     }
 }

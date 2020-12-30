@@ -41,8 +41,9 @@ dependencies {
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
-
-    def nav_version = "2.3.0"
+    //implementation 'androidx.navigation:navigation-fragment:2.3.2'
+    //implementation 'androidx.navigation:navigation-ui:2.3.2'
+    def nav_version = "2.3.2"
     implementation "androidx.navigation:navigation-fragment:$nav_version"
     implementation "androidx.navigation:navigation-ui:$nav_version"
 }

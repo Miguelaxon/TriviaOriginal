@@ -25,9 +25,8 @@
         android:layout_marginTop="20dp"
         android:autofillHints=""
         android:ems="10"
-        android:hint="@string/escriba_nombre"
         android:inputType="textPersonName"
-        android:textStyle="italic"
+        android:textColorHint="@color/design_default_color_error"
         app:layout_constraintBottom_toTopOf="@+id/btnEnviar"
         app:layout_constraintStart_toStartOf="@+id/tvLabel"
         app:layout_constraintTop_toBottomOf="@+id/tvLabel" />
