@@ -22,11 +22,6 @@ public class TitleFragment extends Fragment {
         // Required empty public constructor
     }
 
-    public static TitleFragment newInstance() {
-        TitleFragment fragment = new TitleFragment();
-        return fragment;
-    }
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,7 +43,7 @@ public class TitleFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 if(!binding.etName.getText().toString().isEmpty()) {
-                    addLogoTriviaFragment(binding.etName.getText().toString());
+
                 } else {
                     Toast.makeText(getContext(), "Debes escribir un nombre",
                             Toast.LENGTH_LONG).show();
@@ -57,12 +52,4 @@ public class TitleFragment extends Fragment {
         });
     }
 
-    private void addLogoTriviaFragment(String name){
-        LogoTriviaFragment logoTriviaFragment = LogoTriviaFragment.newInstance(name);
-        FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction()
-                .replace(R.id.content_fragment, logoTriviaFragment, TitleFragment.
-                        class.getSimpleName()).addToBackStack(null);
-        fragmentTransaction.commit();
-    }
 }

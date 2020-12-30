@@ -26,14 +26,6 @@ public class LogoTriviaFragment extends Fragment {
         // Required empty public constructor
     }
 
-    public static LogoTriviaFragment newInstance(String param1) {
-        LogoTriviaFragment fragment = new LogoTriviaFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -84,29 +76,12 @@ public class LogoTriviaFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 if ( choice == 1){
-                    onWinnerFragment(name);
+
                 } else {
-                    onLoserFragment(name);
+
                 }
             }
         });
     }
 
-    public void onLoserFragment(String name){
-        LoserFragment loserFragment = LoserFragment.newInstance(name);
-        FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction()
-                .replace(R.id.content_fragment, loserFragment, TitleFragment.
-                        class.getSimpleName()).addToBackStack(null);
-        fragmentTransaction.commit();
-    }
-
-    public void onWinnerFragment(String name){
-        WinnerFragment winnerFragment = WinnerFragment.newInstance(name);
-        FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction()
-                .replace(R.id.content_fragment, winnerFragment, TitleFragment.
-                        class.getSimpleName()).addToBackStack(null);
-        fragmentTransaction.commit();
-    }
 }

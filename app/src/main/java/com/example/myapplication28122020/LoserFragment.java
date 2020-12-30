@@ -24,14 +24,6 @@ public class LoserFragment extends Fragment {
         // Required empty public constructor
     }
 
-    public static LoserFragment newInstance(String param1) {
-        LoserFragment fragment = new LoserFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,17 +48,9 @@ public class LoserFragment extends Fragment {
         binding.btnRegreso.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                addLogoTriviaFragment();
+
             }
         });
-    }
-    private void addLogoTriviaFragment(){
-        LogoTriviaFragment logoTriviaFragment = LogoTriviaFragment.newInstance(name);
-        FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction()
-                .replace(R.id.content_fragment, logoTriviaFragment, TitleFragment.
-                        class.getSimpleName()).addToBackStack(null);
-        fragmentTransaction.commit();
     }
 
 }

@@ -26,14 +26,6 @@ public class WinnerFragment extends Fragment {
         // Required empty public constructor
     }
 
-    public static WinnerFragment newInstance(String param1) {
-        WinnerFragment fragment = new WinnerFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,7 +49,7 @@ public class WinnerFragment extends Fragment {
         binding.btnVolver.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                addTitleFragment();
+
             }
         });
 
@@ -67,15 +59,6 @@ public class WinnerFragment extends Fragment {
                 onSalir();
             }
         });
-    }
-
-    private void addTitleFragment(){
-        TitleFragment titleFragment = TitleFragment.newInstance();
-        FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction()
-                .replace(R.id.content_fragment, titleFragment, TitleFragment.
-                        class.getSimpleName()).addToBackStack(null);
-        fragmentTransaction.commit();
     }
 
     private void onSalir(){
