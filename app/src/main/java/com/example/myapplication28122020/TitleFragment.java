@@ -46,12 +46,12 @@ public class TitleFragment extends Fragment {
         binding.btnEnviar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(!binding.etName.getText().toString().isEmpty()) {
+                if(name.isEmpty()){
+                    Toast.makeText(getContext(), "Campo vacío, ingrese un nombre"
+                            , Toast.LENGTH_LONG).show();
+                } else {
                     Navigation.findNavController(v)
                             .navigate(R.id.action_titleFragment_to_logoTriviaFragment, bundle);
-                } else {
-                    Toast.makeText(getContext(), "Debes escribir un nombre",
-                            Toast.LENGTH_LONG).show();
                 }
             }
         });

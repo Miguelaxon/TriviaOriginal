@@ -48,7 +48,6 @@ public class LogoTriviaFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         String saludo = getString(R.string.saludo, name);
         binding.tvName.setText(saludo);
-
         binding.rdGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {

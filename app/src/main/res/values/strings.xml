@@ -1,11 +1,8 @@
 <resources>
     <string name="app_name">Trivia</string>
-    <string name="titleFragment">
-        Bienvenido.\n
-        Ingresa tu nombre para comenzar.</string>
-    <string name="saludo">
-        Hola,
-        <b>%1$s</b></string>
+    <string name="title">Bienvenido!</string>
+    <string name="titleFragment">Ingresa tu nombre para comenzar.</string>
+    <string name="saludo">Hola, %1$s</string>
     <string name="radiobutton1">WhatsApp</string>
     <string name="radiobutton2">Youtube</string>
     <string name="radiobutton3">Twitter</string>
