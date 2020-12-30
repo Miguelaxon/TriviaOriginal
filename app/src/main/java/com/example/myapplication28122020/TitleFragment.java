@@ -43,8 +43,6 @@ public class TitleFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         //binding.etName.setSelection(0);
         bundle = new Bundle();
-
-
         binding.btnEnviar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
